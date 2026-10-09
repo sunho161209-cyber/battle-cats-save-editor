@@ -1,62 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Battle Cats Save Editor</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #171923;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 { color: #7dd3fc; }
-    .box {
-      background: #292d3e;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 15px;
-    }
-    button {
-      background: #38bdf8;
-      border: 0;
-      border-radius: 8px;
-      padding: 12px;
-      margin: 10px;
-      font-size: 16px;
-    }
-    textarea {
-      width: 95%;
-      height: 150px;
-      background: #111827;
-      color: white;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-  <h1>🐱 Battle Cats Save Editor</h1>
-  <p>모바일 세이브 파일 도구</p>
-
-  <div class="box">
-    <h3>세이브 파일 선택</h3>
-    <input type="file" id="saveFile">
-    <p id="status">파일을 선택하세요.</p>
-  </div>
-
-  <div class="box">
-    <h3>파일 내용</h3>
-    <textarea id="content" placeholder="파일 내용"></textarea>
-    <br>
-    <button onclick="downloadFile()">파일 저장</button>
-  </div>
-
-  <script>
-    let fileName = "save.txt";
-
-    document.getElementById("saveFile").addEventListener("change", function(e) {
+"").addEventListener("change", function(e) {
       const file = e.target.files[0];
       if (!file) return;
 
@@ -93,4 +35,4 @@
     }
   </script>
 </body>
-  </html>
+ 
