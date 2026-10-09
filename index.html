@@ -1,38 +1,74 @@
-"").addEventListener("change", function(e) {
-      const file = e.target.files[0];
-      if (!file) return;
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battle Cats Save Editor</title>
 
-      fileName = file.name;
-      const reader = new FileReader();
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background:#171923;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
 
-      reader.onload = function() {
-        document.getElementById("content").value = reader.result;
-        document.getElementById("status").textContent =
-          "선택한 파일: " + file.name;
-      };
+.box {
+  background:#292d3e;
+  padding:20px;
+  border-radius:15px;
+  margin:20px auto;
+  max-width:400px;
+}
 
-      reader.onerror = function() {
-        document.getElementById("status").textContent =
-          "파일을 읽을 수 없습니다.";
-      };
+input, button {
+  padding:12px;
+  margin:10px;
+  border-radius:8px;
+  font-size:16px;
+}
 
-      reader.readAsText(file);
-    });
+button {
+  background:#38bdf8;
+  border:0;
+}
+</style>
 
-    function downloadFile() {
-      const blob = new Blob(
-        [document.getElementById("content").value],
-        {type: "text/plain;charset=utf-8"}
-      );
+</head>
 
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = fileName;
-      a.click();
+<body>
 
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    }
-  </script>
+<h1>🐱 Battle Cats Save Editor</h1>
+
+<div class="box">
+
+<h2>🥫 통조림 입력</h2>
+
+<input id="cans" type="number" value="45000">
+
+<br>
+
+<button onclick="changeCans()">확인</button>
+
+<h2 id="result">통조림: 45,000개</h2>
+
+</div>
+
+
+<script>
+
+function changeCans(){
+
+let value=document.getElementById("cans").value;
+
+document.getElementById("result").innerHTML =
+"통조림: " + Number(value).toLocaleString() + "개";
+
+}
+
+</script>
+
+
 </body>
- 
+</html>
